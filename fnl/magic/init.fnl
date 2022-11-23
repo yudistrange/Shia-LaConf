@@ -26,7 +26,6 @@
 (nvim.ex.set :spell)
 (nvim.ex.set :list)
 
-
 ;;; Fonts
 
 (set vim.o.guifont "JetBrainsMono Nerd Font:h10")
@@ -37,10 +36,12 @@
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
-(nvim.set_keymap "" :<C-v> "+p<CR>" {:noremap true})
-(nvim.set_keymap :i :<C-v> "<C-R>+" {:noremap true})
-(nvim.set_keymap :t :<C-v> "<C-R>+" {:noremap true})
-(nvim.set_keymap :v :<C-v> "<C-R>+" {:noremap true})
+; (nvim.set_keymap :n :<C-c> "\"+y" {})
+; (nvim.set_keymap :v :<C-c> "\"+y" {})
+; (nvim.set_keymap :n :<C-v> "\"+p<CR>" {:noremap true})
+; (nvim.set_keymap :i :<C-v> "<C-R>+" {:noremap true})
+; (nvim.set_keymap :t :<C-v> "<C-R>+" {:noremap true})
+; (nvim.set_keymap :v :<C-v> "<C-R>+" {:noremap true})
 
 ;;; Plugins
 
@@ -109,3 +110,6 @@
   :tpope/vim-surround {}
   :tpope/vim-repeat {}
   )
+
+;; Set the clipboard after evaluation of plugins so that the value is not overridden by plugins
+(set vim.o.clipboard "unnamedplus")
