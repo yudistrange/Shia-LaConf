@@ -36,12 +36,12 @@
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
-; (nvim.set_keymap :n :<C-c> "\"+y" {})
-; (nvim.set_keymap :v :<C-c> "\"+y" {})
-; (nvim.set_keymap :n :<C-v> "\"+p<CR>" {:noremap true})
-; (nvim.set_keymap :i :<C-v> "<C-R>+" {:noremap true})
-; (nvim.set_keymap :t :<C-v> "<C-R>+" {:noremap true})
-; (nvim.set_keymap :v :<C-v> "<C-R>+" {:noremap true})
+(nvim.set_keymap :n :<C-c> "\"+y" {})
+(nvim.set_keymap :v :<C-c> "\"+y" {})
+(nvim.set_keymap :n :<C-v> "\"+p<CR>" {:noremap true})
+(nvim.set_keymap :i :<C-v> "<C-R>+" {:noremap true})
+(nvim.set_keymap :t :<C-v> "<C-R>+" {:noremap true})
+(nvim.set_keymap :v :<C-v> "<C-R>+" {:noremap true})
 
 ;;; Plugins
 
