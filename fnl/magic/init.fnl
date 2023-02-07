@@ -109,6 +109,8 @@
   :guns/vim-sexp {:mod :sexp}
   :tpope/vim-surround {}
   :tpope/vim-repeat {}
+  :norcalli/nvim-colorizer.lua {}
+  :mhanberf/elixir.nvim {}
   :sam4llis/nvim-tundra {})
 
 ;; Set the clipboard after evaluation of plugins so that the value is not overridden by plugins
