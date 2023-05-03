@@ -7,16 +7,16 @@
 
 (let [(ok? lsp) (pcall #(require :lspconfig))]
   (when ok?
-    ; (lsp.rust_analyzer.setup
-    ;   { :on_attach lsp-format.on_attach })
-    ; (lsp.clojure_lsp.setup
-    ;   { :on_attach lsp-format.on_attach })
-    ; (lsp.tsserver.setup
-    ;   { :on_attach lsp-format.on_attach })
-    ; (lsp.sumneko_lua.setup
-    ;   {:cmd ["lua-language-server"]
-    ;    :on_attach lsp-format.on_attach
-    ;    :settings {:Lua {:telemetry {:enable false}}}})
+    (lsp.rust_analyzer.setup
+      { :on_attach lsp-format.on_attach })
+    (lsp.clojure_lsp.setup
+      { :on_attach lsp-format.on_attach })
+    (lsp.tsserver.setup
+      { :on_attach lsp-format.on_attach })
+    (lsp.sumneko_lua.setup
+      {:cmd ["lua-language-server"]
+       :on_attach lsp-format.on_attach
+       :settings {:Lua {:telemetry {:enable false}}}})
 
     ;; https://www.chrisatmachine.com/Neovim/27-native-lsp/
     (map :gd "lua vim.lsp.buf.definition()")
