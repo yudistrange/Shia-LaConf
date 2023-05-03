@@ -6,5 +6,8 @@
   (when ok?
     (nvim-tree.setup
       {:sync_root_with_cwd true
-       :sort_by "case_sensitive"})
+       :sort_by "case_sensitive"
+       :respect_buf_cwd true
+       :update_focused_file {:enable true
+                             :update_root true}})
     (util.lnnoremap :nn "NvimTreeToggle")))

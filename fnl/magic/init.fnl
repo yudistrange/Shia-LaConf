@@ -96,6 +96,10 @@
   ;; NvimTree for browsing files
   :nvim-tree/nvim-tree.lua {:mod :nvim-tree
                             :requires [[ :nvim-tree/nvim-web-devicons]]}
+
+  ;; Project
+  :ahmedkhalf/project.nvim  {:mod :project-nvim}
+
   ;; Cursor line
   :yamatsum/nvim-cursorline {:mod :nvim-cursorline}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter}
