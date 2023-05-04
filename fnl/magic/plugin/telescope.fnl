@@ -9,7 +9,11 @@
        {:vimgrep_arguments ["rg" "--color=never" "--no-heading"
                             "--with-filename" "--line-number" "--column"
                             "--smart-case" "--hidden" "--follow"
-                            "-g" "!.git/"]}})
+                            "-g" "!.git/"]}
+       :extensions
+       {:ui-select (let [(ok? telescope-themes) (pcall #(require :telescope-themes))]
+                     (when ok?
+                       (telescope-themes.get_dropdown)))}})
 
     (util.lnnoremap :ff "Telescope find_files hidden=true")
     (util.lnnoremap :f- "Telescope file_browser")

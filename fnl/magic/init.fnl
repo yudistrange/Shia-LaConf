@@ -79,8 +79,6 @@
   :lukas-reineke/lsp-format.nvim {}
 
   :nvim-lualine/lualine.nvim {:mod :lualine}
-  :nvim-telescope/telescope.nvim {:mod :telescope 
-                                  :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
   :radenling/vim-dispatch-neovim {}
   :tpope/vim-abolish {}
   :tpope/vim-commentary {}
@@ -93,6 +91,11 @@
   :w0rp/ale {:mod :ale}
   :wbthomason/packer.nvim {}
 
+  ;; Telescope & plugins
+  :nvim-telescope/telescope.nvim {:mod :telescope 
+                                  :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
+  :nvim-telescope/telescope-ui-select.nvim {}
+  
   ;; NvimTree for browsing files
   :nvim-tree/nvim-tree.lua {:mod :nvim-tree
                             :requires [[ :nvim-tree/nvim-web-devicons]]}
