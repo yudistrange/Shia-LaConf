@@ -32,7 +32,6 @@
 
 
 ;;; Mappings
-
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
 
@@ -120,7 +119,7 @@
   :tpope/vim-surround {}
   :tpope/vim-repeat {}
   :norcalli/nvim-colorizer.lua {}
-  :mhanberf/elixir.nvim {}
+  ; :mhanberf/elixir.nvim {}
   :sam4llis/nvim-tundra {})
 
 ;; Set the clipboard after evaluation of plugins so that the value is not overridden by plugins
