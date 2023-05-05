@@ -3,7 +3,7 @@
 (packer.startup
   (fn [use]
     (use "wbthomason/packer.nvim")
-    (use "rktjmp/hotpot.nvim")
+    (use "Olical/aniseed")
 
     ;; TreeSitter for syntax highlighting
     (use "nvim-treesitter/nvim-treesitter")))
