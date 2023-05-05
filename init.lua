@@ -1,35 +1,33 @@
--- Welcome to your magic kit!
--- This is the first file Neovim will load.
--- We'll ensure we have a plugin manager and Aniseed.
--- This will allow us to load more Fennel based code and download more plugins.
+-- ~/.config/nvim/init.lua
 
--- Make some modules easier to access.
-local execute = vim.api.nvim_command
-local fn = vim.fn
-local fmt = string.format
+-- This init.lua file will clone hotpot into your plugins directory if
+-- it is missing. Do not forget to also add hotpot to your plugin manager
+-- or it may uninstall hotpot!
 
--- Work out where our plugins will be stored.
-local pack_path = fn.stdpath("data") .. "/site/pack"
-
-function ensure (user, repo)
-  -- Ensures a given github.com/USER/REPO is cloned in the pack/packer/start directory.
-  local install_path = fmt("%s/packer/start/%s", pack_path, repo, repo)
-  if fn.empty(fn.glob(install_path)) > 0 then
-    execute(fmt("!git clone https://github.com/%s/%s %s", user, repo, install_path))
-    execute(fmt("packadd %s", repo))
-  end
+-- Consult your plugin-manager documentation for where it installs plugins.
+-- packer.nvim
+-- local plugin_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/hotpot.nvim'
+-- paq.nvim
+local function install_path(plugin_name) 
+	return vim.fn.stdpath('data') .. '/site/pack/packer/start/' .. plugin_name
 end
 
--- Packer is our plugin manager.
-ensure("wbthomason", "packer.nvim")
+local function bootstrap(plugin_name, plugin_repo)
+	local plugin_path = install_path(plugin_name)
+	if vim.fn.empty(vim.fn.glob(plugin_path)) > 0 then
+  		print("Could not find " .. plugin_name .. ", cloning new copy to: " .. plugin_path)
+  		vim.fn.system({'git', 'clone', plugin_repo, plugin_path})
+		vim.cmd("helptags " .. plugin_path .. "/doc")
+	end
+end
 
--- Aniseed compiles our Fennel code to Lua and loads it automatically.
-ensure("Olical", "aniseed")
+bootstrap("hotpot.nvim", "https://github.com/rktjmp/hotpot.nvim.git")
+bootstrap("packer.nvim", "https://github.com/wbthomason/packer.nvim.git")
 
--- Enable Aniseed's automatic compilation and loading of Fennel source code.
--- Aniseed looks for this when it's loaded then loads the rest of your
--- configuration if it's set.
-vim.g["aniseed#env"] = {module = "magic.init"}
+-- Enable fnl/ support
+require("hotpot")
 
--- Now head to fnl/magic/init.fnl to continue your journey.
--- Try pressing gf on the file path to [g]o to the [f]ile.
+-- Now you can load fennel code, so you could put the rest of your
+-- config in a separate `~/.config/nvim/fnl/my_config.fnl` or
+-- `~/.config/nvim/fnl/plugins.fnl`, etc.
+require("initialize")
