@@ -2,4 +2,5 @@
 
 (packer.startup
   (fn [use]
-    (use "wbthomason/packer.nvim")))
+    (use "wbthomason/packer.nvim")
+    (use "rktjmp/hotpot.nvim")))
