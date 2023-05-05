@@ -21,8 +21,12 @@ local function bootstrap(plugin_name, plugin_repo)
 	end
 end
 
-bootstrap("hotpot.nvim", "https://github.com/rktjmp/hotpot.nvim.git")
+-- Install Packer
 bootstrap("packer.nvim", "https://github.com/wbthomason/packer.nvim.git")
+vim.cmd [[packadd packer.nvim]]
+
+-- Install hotpot
+bootstrap("hotpot.nvim", "https://github.com/rktjmp/hotpot.nvim.git")
 
 -- Enable fnl/ support
 require("hotpot")
