@@ -1,7 +1,7 @@
 (module magic.plugin.project
   {autoload {nvim aniseed.nvim}})
 
-(let [(ok? project-nvim) (pcall require :project-nvim)]
+(let [(ok? project-nvim) (pcall #(require :project-nvim))]
   (when ok?
     (project-nvim.setup
       {:manual_mode false
