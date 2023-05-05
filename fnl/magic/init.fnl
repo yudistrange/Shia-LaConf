@@ -69,8 +69,11 @@
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   :lewis6991/impatient.nvim {}
   :liuchengxu/vim-better-default {:mod :better-default}
-  :marko-cerovac/material.nvim {:mod :material}
   :mbbill/undotree {:mod :undotree}
+
+  ;; ColorScheme
+  ;; :marko-cerovac/material.nvim {:mod :material}
+  :catppuccin/nvim {:mod :catppuccin}
 
   ;; LSP Plugins
   :neovim/nvim-lspconfig {:mod :lspconfig}
