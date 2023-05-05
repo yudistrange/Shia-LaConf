@@ -20,7 +20,7 @@ bootstrap("packer.nvim", "https://github.com/wbthomason/packer.nvim.git")
 vim.cmd [[packadd packer.nvim]]
 
 -- Install Aniseed
-bootstrap("Olical/aniseed", "https://github.com/Olical/aniseed.git")
+bootstrap("aniseed", "https://github.com/Olical/aniseed.git")
 
 -- Set fennel init module
 vim.g["aniseed#env"] = {
