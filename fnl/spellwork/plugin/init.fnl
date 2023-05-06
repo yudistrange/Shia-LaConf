@@ -10,7 +10,17 @@
     ;; Lispy things setup
     "Olical/conjure" {}
     "tpope/vim-sexp-mappings-for-regular-people" {}
-    "guns/vim-sexp" {:mod :lisp}
+    "guns/vim-sexp" {:mod "lisp"}
     "tpope/vim-repeat" {}
     "tpope/vim-surround" {}
+
+    ;; TreeSitter for syntax highlights
+    "nvim-treesitter/nvim-treesitter"
+    {:mod "treesitter"
+     :do  ":TSUpdate"}
+
+    ;; Telescope setup
+    "nvim-telescope/telescope.nvim"
+    {:mod       "telescope"
+     :requires  [["nvim-lua/plenary.nvim"]]}
     ))
