@@ -1,6 +1,6 @@
 (module spellwork.init
-	{autoload {plugins spellwork.plugins
+	{autoload {plugin spellwork.plugin
                    keybindings spellwork.keybindings}})
 
-(plugins.load)
+(plugin.load)
 (keybindings.load)
