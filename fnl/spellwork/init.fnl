@@ -1,7 +1,8 @@
 (module spellwork.init
 	{autoload {plugin       spellwork.plugin
-                   config       spellwork.config
-                   keybindings  spellwork.keybindings}})
+                   keybindings  spellwork.keybindings}
+         require  {config       spellwork.config}})
 
-;; `autoload` evaluates the required module. Thus the top level forms are evaluated on autoload
+;; `autoload` doesn't evaluate the required module eagerly.
+;; Thus we need wrapper functions that can be called to eagerly load the forms. Or we can require these.
 (plugin.load)
