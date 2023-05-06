@@ -6,7 +6,7 @@
   "Safely require a module under the magic.plugin.* prefix. Will catch errors
   and print them while continuing execution, allowing other plugins to load
   even if one configuration module is broken."
-  (let [(ok? val-or-err) (pcall require (.. "spellwork.plugin.config" name))]
+  (let [(ok? val-or-err) (pcall require (.. "spellwork.plugin.config." name))]
     (when (not ok?)
       (print (.. "Plugin config error: " val-or-err)))))
 
