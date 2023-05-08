@@ -26,4 +26,9 @@
 
     ;; Fancy Input / Select UI
     "hood/popui.nvim" {:mod "popui"}
+
+    ;; LSP
+    "neovim/nvim-lspconfig" {:mod "lsp"}
+    "williamboman/mason.nvim" {}
+    "williamboman/mason-lspconfig.nvim" {}
     ))
