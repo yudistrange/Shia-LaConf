@@ -23,4 +23,7 @@
     "nvim-telescope/telescope.nvim"
     {:mod       "telescope"
      :requires  [["nvim-lua/plenary.nvim"]]}
+
+    ;; Fancy Input / Select UI
+    "hood/popui.nvim" {:mod "popui"}
     ))
