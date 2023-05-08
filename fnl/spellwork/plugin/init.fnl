@@ -41,4 +41,8 @@
       [ "hrsh7th/cmp-buffer" ]
       [ "hrsh7th/cmp-path" ]]}
     "L3MON4D3/LuaSnip" {:run "make install_jsregexp"}
+
+    ;; UI niceties
+    "rcarriga/nvim-notify" {:mod "notify"}
+    "nyoom-engineering/oxocarbon.nvim" {:mod "theme"}
     ))
