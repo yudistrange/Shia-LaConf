@@ -24,9 +24,6 @@
     {:mod       "telescope"
      :requires  [["nvim-lua/plenary.nvim"]]}
 
-    ;; Fancy Input / Select UI
-    "hood/popui.nvim" {:mod "popui"}
-
     ;; LSP
     "neovim/nvim-lspconfig" {:mod "lsp"}
     "williamboman/mason.nvim" {}
@@ -45,4 +42,7 @@
     ;; UI niceties
     "rcarriga/nvim-notify" {:mod "notify"}
     "nyoom-engineering/oxocarbon.nvim" {:mod "theme"}
+    "folke/noice.nvim"
+    {:mod "noice"
+     :requires [["MunifTanjim/nui.nvim"]]}
     ))
