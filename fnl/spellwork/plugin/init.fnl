@@ -48,4 +48,6 @@
     "folke/noice.nvim"
     {:mod "noice"
      :requires [["MunifTanjim/nui.nvim"]]}
-    ))
+    "nvim-lualine/lualine.nvim" {:mod "lualine"}
+    "nvim-tree/nvim-web-devicons" {}
+))
