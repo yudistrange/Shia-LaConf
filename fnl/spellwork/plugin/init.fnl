@@ -39,6 +39,9 @@
       [ "hrsh7th/cmp-path" ]]}
     "L3MON4D3/LuaSnip" {:run "make install_jsregexp"}
 
+    ;; Which Key
+    "folke/which-key.nvim" {:mod "which-key"}
+
     ;; UI niceties
     "rcarriga/nvim-notify" {:mod "notify"}
     "nyoom-engineering/oxocarbon.nvim" {:mod "theme"}
