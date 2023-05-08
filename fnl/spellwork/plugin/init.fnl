@@ -17,7 +17,7 @@
     ;; TreeSitter for syntax highlights
     "nvim-treesitter/nvim-treesitter"
     {:mod "treesitter"
-     :do  ":TSUpdate"}
+     :run ":TSUpdate"}
 
     ;; Telescope setup
     "nvim-telescope/telescope.nvim"
