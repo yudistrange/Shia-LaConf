@@ -8,5 +8,18 @@
 ;; Set , as localleader
 (set nvim.g.maplocalleader ",")
 
-;; Enable system clipboard
-(nvim.set_option "clipboard" "unnamedplus")
+(set nvim.g.vim_better_default_persistent_undo true)
+(nvim.ex.runtime_ "plugin/default.vim")
+
+;; Configurations from better-defaults
+(nvim.ex.set :number)
+(nvim.ex.set :norelativenumber)
+(nvim.ex.set :wrap)
+(nvim.ex.set :nocursorline)
+(nvim.ex.set "wildmode=full")
+(nvim.ex.set "wildoptions=pum")
+(nvim.ex.set "listchars-=eol:↵")
+
+(set nvim.o.undodir (.. (nvim.fn.stdpath "data") "/undo"))
+
+(nvim.ex.set "clipboard+=unnamedplus")
