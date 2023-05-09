@@ -16,10 +16,9 @@
       :h [ "<cmd>sp<cr>" "Horizontal Split" ]
       :v [ "<cmd>vsp<cr>" "Vertical Split" ]}
     :q [ "<cmd>q<cr>" "Quit" ]
+    :n [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
   }
 })
-
-(print (a.get keymaps :check))
 
 (let [(ok? which-key) (pcall #(require "which-key"))]
   (when ok?

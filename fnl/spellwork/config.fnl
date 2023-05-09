@@ -23,3 +23,7 @@
 (set nvim.o.undodir (.. (nvim.fn.stdpath "data") "/undo"))
 
 (nvim.ex.set "clipboard+=unnamedplus")
+
+(set vim.g.loaded_netrw  1)
+(set vim.g.loaded_netrwPlugin  1)
+(set vim.opt.termguicolors  true)
