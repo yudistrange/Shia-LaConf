@@ -1,6 +1,5 @@
 (module spellwork.init
-	{autoload {plugin       spellwork.plugin
-                   keybindings  spellwork.keybindings}
+	{autoload {plugin       spellwork.plugin}
          require  {config       spellwork.config}})
 
 ;; `autoload` doesn't evaluate the required module eagerly.
