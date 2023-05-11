@@ -24,6 +24,7 @@
     {:mod       "telescope"
      :requires  [["nvim-lua/plenary.nvim"]]}
     "ahmedkhalf/project.nvim" {:mod "project"}
+    "nvim-telescope/telescope-fzf-native.nvim" {:run "make"}
 
     ;; LSP
     "neovim/nvim-lspconfig" {:mod "lsp"}
