@@ -23,6 +23,7 @@
     "nvim-telescope/telescope.nvim"
     {:mod       "telescope"
      :requires  [["nvim-lua/plenary.nvim"]]}
+    "ahmedkhalf/project.nvim" {:mod "project"}
 
     ;; LSP
     "neovim/nvim-lspconfig" {:mod "lsp"}
