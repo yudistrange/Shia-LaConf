@@ -1,5 +1,6 @@
 (module spellwork.config
-  {autoload {nvim aniseed.nvim}})
+  {autoload {a aniseed.core
+             nvim aniseed.nvim}})
 
 ;; Set <space> as mapleader
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
@@ -26,4 +27,8 @@
 
 (set vim.g.loaded_netrw  1)
 (set vim.g.loaded_netrwPlugin  1)
-(set vim.opt.termguicolors  true)
+(set vim.opt.termguicolors true)
+
+(a.assoc nvim.o :tabstop 4)
+(a.assoc nvim.o :shiftwidth 4)
+(a.assoc nvim.o :expandtab false)
