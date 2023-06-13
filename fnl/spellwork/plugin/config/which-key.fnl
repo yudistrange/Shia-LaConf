@@ -15,7 +15,7 @@
       :name "+window"
       :h [ "<cmd>sp<cr>" "Horizontal Split" ]
       :v [ "<cmd>vsp<cr>" "Vertical Split" ]}
-    :q [ "<cmd>q<cr>" "Quit" ]
+    :q [ "<cmd>q!<cr>" "Quit without saving" ]
     :n [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
   }
 })
