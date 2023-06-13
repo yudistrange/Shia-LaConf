@@ -56,6 +56,7 @@
     "folke/trouble.nvim"
     {:mod "trouble"
      :requires [["nvim-tree/nvim-web-devicons"]]}
+    "shellRaining/hlchunk.nvim" {:mod "hlchunk"}
 
     ;; Development niceties
     "numToStr/Comment.nvim" {:mod "comment"}
