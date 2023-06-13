@@ -26,3 +26,16 @@
     (set vim.o.timeoutlen 200)
     (which-key.setup {})
     (which-key.register keymaps)))
+
+(defn register-cmd [key command desc opts]
+  (let [(ok? wk) (pcall #(require "which-key"))
+        cmd (.. "<cmd>" command "<cr>")]
+    (when ok?
+      (if opts
+        (wk.register {key (a.merge {1 cmd 2 desc} opts)})
+        (wk.register {key [cmd desc]})))))
+
+(defn register-tag [key desc]
+  (let [(ok? wk) (pcall #(require "which-key"))]
+    (when ok?
+      (wk.register {key {:name desc}}))))
