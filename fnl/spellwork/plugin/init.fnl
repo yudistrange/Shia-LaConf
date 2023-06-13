@@ -53,7 +53,10 @@
     "nvim-lualine/lualine.nvim" {:mod "lualine"}
     "nvim-tree/nvim-web-devicons" {}
     "nvim-tree/nvim-tree.lua" {:mod "nvim-tree"}
+    "folke/trouble.nvim"
+    {:mod "trouble"
+     :requires [["nvim-tree/nvim-web-devicons"]]}
 
-     ;; Development niceties
+    ;; Development niceties
     "numToStr/Comment.nvim" {:mod "comment"}
 ))
