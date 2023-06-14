@@ -24,7 +24,7 @@
   {1 (fn [server-name]
        (let [(ok? lspconfig) (pcall #(require "lspconfig"))]
          ((. (. lspconfig server-name) :setup)
-          {:on_attach (fn [] (lsp-keymaps))})))})
+          {:on_attach (fn [bufnr] (lsp-keymaps bufnr))})))})
 
 (let [(mason-ok? mason)         (pcall #(require "mason"))
       (mason-lsp-ok? mason-lsp) (pcall #(require "mason-lspconfig"))]
