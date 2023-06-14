@@ -32,7 +32,7 @@
         cmd (.. "<cmd>" command "<cr>")]
     (when ok?
       (if opts
-        (wk.register {key (a.merge {1 cmd 2 desc} opts)})
+        (wk.register {key [cmd desc]} opts)
         (wk.register {key [cmd desc]})))))
 
 (defn register-tag [key desc]
