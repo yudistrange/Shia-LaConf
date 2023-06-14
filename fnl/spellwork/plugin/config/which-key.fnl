@@ -15,7 +15,7 @@
       :name "+window"
       :h [ "<cmd>sp<cr>" "Horizontal Split" ]
       :v [ "<cmd>vsp<cr>" "Vertical Split" ]}
-    :q [ "<cmd>q!<cr>" "Quit without saving" ]
+    :qq [ "<cmd>q!<cr>" "Quit without saving" ]
     :n [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
   }
 })
@@ -29,11 +29,18 @@
 
 (defn register-cmd [key command desc opts]
   (let [(ok? wk) (pcall #(require "which-key"))
-        cmd (.. "<cmd>" command "<cr>")]
+        cmd-str  (.. "<cmd>" command "<cr>")]
     (when ok?
       (if opts
-        (wk.register {key [cmd desc]} opts)
-        (wk.register {key [cmd desc]})))))
+        (wk.register {key [cmd-str desc]} opts)
+        (wk.register {key [cmd-str desc]})))))
+
+(defn register-fn [key f desc opts]
+  (let [(ok? wk) (pcall #(require "which-key"))]
+    (when ok?
+      (if opts
+        (wk.register {key {f desc}} opts)
+        (wk.register {key {f desc}})))))
 
 (defn register-tag [key desc]
   (let [(ok? wk) (pcall #(require "which-key"))]
