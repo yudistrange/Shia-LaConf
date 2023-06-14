@@ -1,6 +1,6 @@
 (module spellwork.init
-	{autoload {plugin       spellwork.plugin}
-         require  {config       spellwork.config}})
+	{autoload {plugin spellwork.plugin}
+         require  {config spellwork.config}})
 
 ;; `autoload` doesn't evaluate the required module eagerly.
 ;; Thus we need wrapper functions that can be called to eagerly load the forms.
