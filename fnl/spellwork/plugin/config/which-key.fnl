@@ -4,19 +4,20 @@
 (def- keymaps {
   :<leader> {
     :f {
-      :name "+file"
-      :f [ "<cmd>Telescope find_files<cr>" "Find File" ]
+      :name "+Telescope"
       :r [ "<cmd>Telescope oldfiles<cr>" "Open Recent File" ]
-      :n [ "<cmd>enew<cr>" "New File" ]
-      :s [ "<cmd>w<cr>" "Save" ]
-      :q [ "<cmd>w<cr><cmd>bd<cr>" "Save & Close File" ]
+      :g [ "<cmd>Telescope live_grep" "Open Recent File" ]
+      :b [ "<cmd>Telescope buffers" "Open Recent File" ]
     }
-    :w {
-      :name "+window"
-      :h [ "<cmd>sp<cr>" "Horizontal Split" ]
-      :v [ "<cmd>vsp<cr>" "Vertical Split" ]}
+    :w [ "<cmd>wincmd w<cr>" "Window switch"]
+    :s {
+      :name "+split"
+      :- [ "<cmd>sp<cr>" "Horizontal Split" ]
+      :| [ "<cmd>vsp<cr>" "Vertical Split" ]
+    }
     :qq [ "<cmd>q!<cr>" "Quit without saving" ]
-    :n [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
+    :e [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
+    :<leader> ["<cmd>Telescope find_files<cr>" "Find File" ]
   }
 })
 
