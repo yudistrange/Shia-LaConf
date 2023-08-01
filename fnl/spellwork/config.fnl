@@ -29,6 +29,6 @@
 (set vim.g.loaded_netrwPlugin  1)
 (set vim.opt.termguicolors true)
 
-(a.assoc nvim.o :tabstop 4)
-(a.assoc nvim.o :shiftwidth 4)
-(a.assoc nvim.o :expandtab false)
+(a.assoc nvim.o :tabstop 2)
+(a.assoc nvim.o :shiftwidth 2)
+(a.assoc nvim.o :expandtab true)
