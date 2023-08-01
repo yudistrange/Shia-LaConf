@@ -6,8 +6,8 @@
     :f {
       :name "+Telescope"
       :r [ "<cmd>Telescope oldfiles<cr>" "Open Recent File" ]
-      :g [ "<cmd>Telescope live_grep" "Open Recent File" ]
-      :b [ "<cmd>Telescope buffers" "Open Recent File" ]
+      :g [ "<cmd>Telescope live_grep<cr>" "Open Grep" ]
+      :b [ "<cmd>Telescope buffers<cr>" "Open Buffer" ]
     }
     :w [ "<cmd>wincmd w<cr>" "Window switch"]
     :s {
