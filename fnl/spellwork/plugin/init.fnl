@@ -46,7 +46,8 @@
 
     ;; UI niceties
     "rcarriga/nvim-notify" {:mod "notify"}
-    "nyoom-engineering/oxocarbon.nvim" {:mod "theme"}
+    "nyoom-engineering/oxocarbon.nvim" {}
+    "glepnir/zephyr-nvim" {:mod "theme"}
     "folke/noice.nvim"
     {:mod "noice"
      :requires [["MunifTanjim/nui.nvim"]]}
