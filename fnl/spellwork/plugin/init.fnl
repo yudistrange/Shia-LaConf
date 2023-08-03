@@ -66,4 +66,7 @@
     "TimUntersberger/neogit" 
     {:mod "neogit"
      :requires [["nvim-lua/plenary.nvim"]]}
+
+    ;; Debugger Support
+    "rcarriga/nvim-dap-ui" {:requires [[ "mfussenegger/nvim-dap" ]]}
 ))
