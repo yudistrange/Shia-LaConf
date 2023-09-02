@@ -9,7 +9,7 @@
       :g [ "<cmd>Telescope live_grep<cr>" "Open Grep" ]
       :b [ "<cmd>Telescope buffers<cr>" "Open Buffer" ]
     }
-    :w [ "<cmd>wincmd w<cr>" "Window switch"]
+    :w ["<CMD>w<CR>" "Save"]
     :s {
       :name "+split"
       :- [ "<cmd>sp<cr>" "Horizontal Split" ]
