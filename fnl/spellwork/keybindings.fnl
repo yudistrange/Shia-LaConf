@@ -14,3 +14,6 @@
 (nvim.set_keymap :n :<C-k> "<CMD>:wincmd k<CR>" {:noremap true})
 (nvim.set_keymap :n :<C-l> "<CMD>:wincmd l<CR>" {:noremap true})
 (nvim.set_keymap :n :<C-h> "<CMD>:wincmd h<CR>" {:noremap true})
+
+;; Close current buffer without saving
+(nvim.set_keymap :n :q "<CMD>:q<CR>" {:noremap true})

@@ -5,12 +5,14 @@
   :<leader> {
     :f {
       :name "+Telescope"
-      :f ["<cmd>Telescope find_files<cr>" "Find File" ]
+      :f [ "<cmd>Telescope find_files<cr>" "Find File" ]
       :r [ "<cmd>Telescope oldfiles<cr>" "Open Recent File" ]
       :g [ "<cmd>Telescope live_grep<cr>" "Open Grep" ]
       :b [ "<cmd>Telescope buffers<cr>" "Open Buffer" ]
+      :c [ "<cmd>Telescope colorscheme<cr>" "ColorSchemes" ]
+      :p [ "<cmd>Telescope treesitter<cr>" "Show Outline"]
     }
-    :w ["<CMD>w<CR>" "Save"]
+    :w [ "<cmd>w<cr>" "Save" ]
     :s {
       :name "+split"
       :- [ "<cmd>sp<cr>" "Horizontal Split" ]
