@@ -12,6 +12,7 @@
      (wk-util.register-cmd "gD" "lua vim.lsp.buf.declaration()" "Jump to Declaration" bufopts)
      (wk-util.register-cmd "gt" "lua vim.lsp.buf.type_definition()" "Type Definition" bufopts)
      (wk-util.register-cmd "<leader>lk" "lua vim.lsp.buf.signature_help()" "Signature" bufopts)
+     (wk-util.register-cmd "<leader>lK" "lua vim.lsp.buf.hover()" "Hover Document" bufopts)
      (wk-util.register-cmd "<leader>lr" "lua vim.lsp.buf.rename()" "Rename" bufopts)
      (wk-util.register-cmd "<leader>la" "lua vim.lsp.buf.code_action()" "Code Action" bufopts)
      (wk-util.register-cmd "<leader>lf" "lua vim.lsp.buf.format()" "Format" bufopts)
