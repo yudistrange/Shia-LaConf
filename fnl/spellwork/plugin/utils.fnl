@@ -1,6 +1,5 @@
 (module spellworks.plugin.utils
-  {autoload {a      aniseed.core
-             packer packer}})
+  {autoload {a aniseed.core}})
 
 (defn- safe-require-plugin-config [name]
   "Safely require a module under the magic.plugin.* prefix. Will catch errors
@@ -17,12 +16,12 @@
   This is just a helper / syntax sugar function to make interacting with packer
   a little more concise."
   (let [pkgs [...]]
-    (packer.startup
-      (fn [use]
-        (for [i 1 (a.count pkgs) 2]
-          (let [name (. pkgs i)
-                opts (. pkgs (+ i 1))]
-            (-?> (. opts :mod) (safe-require-plugin-config))
-            (use (a.assoc opts 1 name)))))))
-
-  nil)
+    (let [(ok? packer) (pcall #(require "packer"))]
+      (when ok?
+        (packer.startup
+          (fn [use]
+            (for [i 1 (a.count pkgs) 2]
+              (let [name (. pkgs i)
+                    opts (. pkgs (+ i 1))]
+                (-?> (. opts :mod) (safe-require-plugin-config))
+                (use (a.assoc opts 1 name))))))))))
