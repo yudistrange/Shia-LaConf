@@ -66,4 +66,5 @@
     "TimUntersberger/neogit" 
     {:mod "neogit"
      :requires [["nvim-lua/plenary.nvim"]]}
+    "cbochs/grapple.nvim" {:mod "grapple"}
 ))
