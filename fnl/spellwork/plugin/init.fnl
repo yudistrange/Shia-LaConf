@@ -63,8 +63,12 @@
     "numToStr/Comment.nvim" {:mod "comment"}
     "folke/todo-comments.nvim"
     {:requires [["nvim-lua/plenary.nvim"]]}
-    "TimUntersberger/neogit" 
-    {:mod "neogit"
-     :requires [["nvim-lua/plenary.nvim"]]}
+    ; "TimUntersberger/neogit" 
+    ; {:mod "neogit"
+    ;  :requires [["nvim-lua/plenary.nvim"]]}
     "cbochs/grapple.nvim" {:mod "grapple"}
+
+    ;; Git setup the old fashioned way
+    "lewis6991/gitsigns.nvim"
+    {:mod "git" :requires [[ "tpope/vim-fugitive" ]]}
 ))
