@@ -23,9 +23,13 @@
 
 (defn lsp-handlers []
   {1 (fn [server-name]
-       (let [(ok? lspconfig) (pcall #(require "lspconfig"))]
+       (let [(ok? lspconfig) (pcall #(require "lspconfig"))
+             (ok? lsp-format) (pcall #(require "lsp-format"))]
+         (lsp-format.setup {})
          ((. (. lspconfig server-name) :setup)
-          {:on_attach (fn [] (lsp-keymaps))})))})
+          {:on_attach (fn [client bufnr] 
+                        (lsp-format.on_attach client bufnr)
+                        (lsp-keymaps))})))})
 
 (let [(mason-ok? mason)         (pcall #(require "mason"))
       (mason-lsp-ok? mason-lsp) (pcall #(require "mason-lspconfig"))]

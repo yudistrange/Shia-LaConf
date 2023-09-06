@@ -27,10 +27,12 @@
     "nvim-telescope/telescope-fzf-native.nvim" {:run "make"}
 
     ;; LSP
-    "neovim/nvim-lspconfig" {:mod "lsp"}
-    "williamboman/mason.nvim" {}
-    "williamboman/mason-lspconfig.nvim" {}
-    "j-hui/fidget.nvim" {}
+    "neovim/nvim-lspconfig"
+    {:mod "lsp"
+     :requires [[ "lukas-reineke/lsp-format.nvim"
+                  "williamboman/mason.nvim"
+                  "williamboman/mason-lspconfig.nvim"
+                  "j-hui/fidget.nvim" ]]}
 
     ;; Completion
     "hrsh7th/nvim-cmp"
