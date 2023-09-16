@@ -74,4 +74,7 @@
     ;; Git setup the old fashioned way
     "lewis6991/gitsigns.nvim"
     {:mod "git" :requires [[ "tpope/vim-fugitive" ]]}
+
+    ;; Language specific plugins
+    "elixir-tools/elixir-tools.nvim" {:mod "elixir"}
 ))
