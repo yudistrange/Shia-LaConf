@@ -6,14 +6,23 @@
 (nvim.set_keymap :i :jj "<ESC>" {:noremap true})
 
 ;; Movement related commands
-(nvim.set_keymap :i :<C-j> "<CMD>:wincmd j<CR>" {:noremap true})
-(nvim.set_keymap :i :<C-k> "<CMD>:wincmd k<CR>" {:noremap true})
-(nvim.set_keymap :i :<C-l> "<CMD>:wincmd l<CR>" {:noremap true})
-(nvim.set_keymap :i :<C-h> "<CMD>:wincmd h<CR>" {:noremap true})
-(nvim.set_keymap :n :<C-j> "<CMD>:wincmd j<CR>" {:noremap true})
-(nvim.set_keymap :n :<C-k> "<CMD>:wincmd k<CR>" {:noremap true})
-(nvim.set_keymap :n :<C-l> "<CMD>:wincmd l<CR>" {:noremap true})
-(nvim.set_keymap :n :<C-h> "<CMD>:wincmd h<CR>" {:noremap true})
+(defn wrapped-navigation [direction reverse]
+  (fn []
+    (if (= (vim.fn.winnr) (vim.fn.winnr direction))
+      (nvim.ex.wincmd 99 reverse)
+      (nvim.ex.wincmd direction))))
+
+(vim.keymap.set :n :<C-j> (wrapped-navigation "j" "k"))
+(vim.keymap.set :i :<C-j> (wrapped-navigation "j" "k"))
+
+(vim.keymap.set :n :<C-k> (wrapped-navigation "k" "j"))
+(vim.keymap.set :i :<C-k> (wrapped-navigation "k" "j"))
+
+(vim.keymap.set :n :<C-l> (wrapped-navigation "l" "h"))
+(vim.keymap.set :i :<C-l> (wrapped-navigation "l" "h"))
+
+(vim.keymap.set :n :<C-h> (wrapped-navigation "h" "l"))
+(vim.keymap.set :i :<C-h> (wrapped-navigation "h" "l"))
 
 ;; Close current buffer without saving
 (nvim.set_keymap :n :q "<CMD>:q<CR>" {:noremap true})
