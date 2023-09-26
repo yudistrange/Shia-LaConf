@@ -5,8 +5,10 @@
   (when ok?
     (elixir.setup
       {:nextls
-       {:enable true
+       {:enable false
         :cmd "/home/udit/.local/share/nvim/mason/bin/nextls"
         :port 9000 }
        :credo {:enable false}
-       :elixirls {:enable false}})))
+       :elixirls
+       {:enable true
+        :cmd "/home/udit/.local/share/nvim/mason/bin/nextls" }})))
