@@ -70,6 +70,8 @@
     ; {:mod "neogit"
     ;  :requires [["nvim-lua/plenary.nvim"]]}
     "cbochs/grapple.nvim" {:mod "grapple"}
+    "AckslD/nvim-neoclip.lua"
+    {:mod "neoclip" :requires [[ "nvim-telescope/telescope.nvim" ]]}
 
     ;; Git setup the old fashioned way
     "lewis6991/gitsigns.nvim"

@@ -21,6 +21,7 @@
     :q [ "<cmd>wq<cr>" "Save & Quit" ]
     :e [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
   }
+  :<S-p> ["<cmd>Telescope neoclip<cr>" "Paste Preview"]
 })
 
 (let [(ok? which-key) (pcall #(require "which-key"))]
