@@ -32,3 +32,6 @@
 (a.assoc nvim.o :tabstop 2)
 (a.assoc nvim.o :shiftwidth 2)
 (a.assoc nvim.o :expandtab true)
+
+;; Configure Neovide
+(set vim.o.guifont "iosevka:14")
