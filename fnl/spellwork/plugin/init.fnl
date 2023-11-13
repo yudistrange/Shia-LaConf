@@ -47,10 +47,22 @@
     ;; Which Key
     "folke/which-key.nvim" {:mod "which-key"}
 
-    ;; UI niceties
-    "rcarriga/nvim-notify" {:mod "notify"}
+    ;; Themes
     "nyoom-engineering/oxocarbon.nvim" {}
     "glepnir/zephyr-nvim" {:mod "theme"}
+    "folke/tokyonight.nvim" {}
+    "catppuccin/nvim" {}
+    "rebelot/kanagawa.nvim" {}
+    "ellisonleao/gruvbox.nvim" {}
+    "rktjmp/lush.nvim" {}
+    "jacoborus/tender.vim" {}
+    "nyoom-engineering/nyoom.nvim" {}
+    "kepano/flexoki" {}
+    "bluz71/vim-nightfly-colors" {}
+    "bluz71/vim-moonfly-colors" {}
+
+    ;; UI niceties
+    "rcarriga/nvim-notify" {:mod "notify"}
     "folke/noice.nvim"
     {:mod "noice"
      :requires [["MunifTanjim/nui.nvim"]]}
