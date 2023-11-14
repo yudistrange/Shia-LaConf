@@ -62,10 +62,10 @@
     "bluz71/vim-moonfly-colors" {}
 
     ;; UI niceties
-    "rcarriga/nvim-notify" {:mod "notify"}
-    "folke/noice.nvim"
-    {:mod "noice"
-     :requires [["MunifTanjim/nui.nvim"]]}
+    ; "rcarriga/nvim-notify" {:mod "notify"}
+    ; "folke/noice.nvim"
+    ; {:mod "noice"
+    ;  :requires [["MunifTanjim/nui.nvim"]]}
     "nvim-lualine/lualine.nvim" {:mod "lualine"}
     "nvim-tree/nvim-web-devicons" {}
     "nvim-tree/nvim-tree.lua" {:mod "nvim-tree"}
