@@ -53,10 +53,10 @@
     "catppuccin/nvim" {}
     "rebelot/kanagawa.nvim" {}
     "ellisonleao/gruvbox.nvim" {}
-    "rktjmp/lush.nvim" {}
-    "jacoborus/tender.vim" {}
-    "nyoom-engineering/nyoom.nvim" {}
-    "kepano/flexoki" {}
+    "kepano/flexoki-neovim" {}
+    "patstockwell/vim-monokai-tasty" {}
+    "AlexvZyl/nordic.nvim" {}
+    "Shatur/neovim-ayu" {}
     "bluz71/vim-nightfly-colors" {}
     "bluz71/vim-moonfly-colors" {}
 
