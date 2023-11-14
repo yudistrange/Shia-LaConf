@@ -71,7 +71,7 @@
     "folke/trouble.nvim"
     {:mod "trouble"
      :requires [["nvim-tree/nvim-web-devicons"]]}
-    "shellRaining/hlchunk.nvim" {:mod "hlchunk"}
+    "lukas-reineke/indent-blankline.nvim" {:mod "highlight"}
 
     ;; Development niceties
     "numToStr/Comment.nvim" {:mod "comment"}
