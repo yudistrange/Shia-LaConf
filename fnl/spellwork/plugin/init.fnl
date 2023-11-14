@@ -33,7 +33,6 @@
                   "williamboman/mason.nvim"
                   "williamboman/mason-lspconfig.nvim"
                   "j-hui/fidget.nvim" ]]}
-    "jose-elias-alvarez/null-ls.nvim" {:mod "null-ls"}
 
     ;; Completion
     "hrsh7th/nvim-cmp"
