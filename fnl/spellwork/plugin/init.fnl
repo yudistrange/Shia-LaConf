@@ -77,9 +77,6 @@
     "numToStr/Comment.nvim" {:mod "comment"}
     "folke/todo-comments.nvim"
     {:requires [["nvim-lua/plenary.nvim"]]}
-    ; "TimUntersberger/neogit" 
-    ; {:mod "neogit"
-    ;  :requires [["nvim-lua/plenary.nvim"]]}
     "cbochs/grapple.nvim" {:mod "grapple"}
     "AckslD/nvim-neoclip.lua"
     {:mod "neoclip" :requires [[ "nvim-telescope/telescope.nvim" ]]}
