@@ -19,7 +19,8 @@
     (and (not= col 0)
          (= (: (: (. (vim.api.nvim_buf_get_lines 0 (- line 1) line true) 1) :sub col col) :match "%s") nil))))
 
-(let [(ok? cmp) (pcall #(require "cmp"))]
+(let [(ok? cmp) (pcall #(require "cmp"))
+      (l-ok? luasnip) (pcall #(require "luasnip"))]
   (when ok?
     (cmp.setup {:formatting
                 {:format (fn [entry item]
@@ -36,5 +37,7 @@
                                                             :select true})
                           :<Tab>      (cmp.mapping.select_next_item)
                           :<S-Tab>    (cmp.mapping.select_prev_item)}
-                :snippet {:expand (fn [args] (luasnip.lsp_expand args.body))}
+                :snippet {:expand (fn [args] (when l-ok?
+                                               (print "Setting up luasnip")
+                                               (luasnip.lsp_expand args.body)))}
                 :sources cmp-srcs})))
