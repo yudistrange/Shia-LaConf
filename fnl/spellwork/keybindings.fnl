@@ -25,4 +25,4 @@
 (vim.keymap.set :i :<C-h> (wrapped-navigation "h" "l"))
 
 ;; Close current buffer without saving
-(nvim.set_keymap :n :q "<CMD>:q<CR>" {:noremap true})
+(nvim.set_keymap :n :qq "<CMD>:q<CR>" {:noremap true})
