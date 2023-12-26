@@ -87,4 +87,5 @@
 
     ;; Language specific plugins
     "elixir-tools/elixir-tools.nvim" {:mod "elixir"}
+    "simrat39/rust-tools.nvim" {:mod "rust"}
 ))
