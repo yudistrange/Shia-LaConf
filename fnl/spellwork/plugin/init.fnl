@@ -22,7 +22,9 @@
     ;; Telescope setup
     "nvim-telescope/telescope.nvim"
     {:mod       "telescope"
-     :requires  [["nvim-lua/plenary.nvim"]]}
+     :requires  [["nvim-lua/plenary.nvim"]
+                 ["nvim-telescope/telescope-media-files.nvim"]
+                 ["nvim-lua/popup.nvim"]]}
     "ahmedkhalf/project.nvim" {:mod "project"}
     "nvim-telescope/telescope-fzf-native.nvim" {:run "make"}
 
