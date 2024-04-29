@@ -34,4 +34,4 @@
 (a.assoc nvim.o :expandtab true)
 
 ;; Configure Neovide
-(set vim.o.guifont "iosevka:14")
+(set vim.o.guifont "Iosevka NFM:h16")
