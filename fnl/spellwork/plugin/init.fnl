@@ -95,4 +95,7 @@
 
     ;; AI helpers!
     "huggingface/llm.nvim" {:mod "llm"}
+
+    ;; Direnv integration
+    "direnv/direnv.vim" {}
 ))
