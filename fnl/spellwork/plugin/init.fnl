@@ -94,7 +94,7 @@
     "simrat39/rust-tools.nvim" {:mod "rust"}
 
     ;; AI helpers!
-    "huggingface/llm.nvim" {:mod "llm"}
+    ; "huggingface/llm.nvim" {:mod "llm"}
 
     ;; Direnv integration
     "direnv/direnv.vim" {}
