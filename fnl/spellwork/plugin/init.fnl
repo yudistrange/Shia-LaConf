@@ -75,6 +75,7 @@
     {:mod "trouble"
      :requires [["nvim-tree/nvim-web-devicons"]]}
     "lukas-reineke/indent-blankline.nvim" {:mod "highlight"}
+    "akinsho/toggleterm.nvim" {:mod "terminal"}
 
     ;; Development niceties
     "numToStr/Comment.nvim" {:mod "comment"}
