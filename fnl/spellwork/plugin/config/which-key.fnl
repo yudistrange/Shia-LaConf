@@ -20,6 +20,13 @@
     }
     :q [ "<cmd>wq<cr>" "Save & Quit" ]
     :e [ "<cmd>NvimTreeToggle<cr>" "NvimTree"]
+    :b {
+      :name "+Tabs"
+      :N ["<cmd>tabnew<cr>" "New Tab"]
+      :q ["<cmd>tabclose<cr>" "Close Current Tab"]
+      :n ["<cmd>tabnext<cr>" "Next Tab"]
+      :p ["<cmd>tabprevious<cr>" "Previous Tab"]
+    }
   }
   :<S-p> ["<cmd>Telescope neoclip<cr>" "Paste Preview"]
 })
