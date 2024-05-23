@@ -35,6 +35,7 @@
                   "williamboman/mason.nvim"
                   "williamboman/mason-lspconfig.nvim"
                   "j-hui/fidget.nvim" ]]}
+    "nvimtools/none-ls.nvim" {:mod "null-ls"}
 
     ;; Completion
     "hrsh7th/nvim-cmp"
