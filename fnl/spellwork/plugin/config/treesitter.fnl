@@ -10,3 +10,16 @@
        :highlight  
        {:enable  true
         :additional_vim_regex_highlighting false}})))
+
+;; Install rescript
+(let [(ok? parser-config) (pcall #(require "nvim-treesitter.parsers"))] 
+  (when ok?
+   (let [configs ((. parser-config :get_parser_configs))]
+     (set configs.rescript
+      {:install_info
+       {:branch :main
+        :files [:src/parser.c :src/scanner.c]
+        :generate_requires_npm false
+        :requires_generate_from_grammar true
+        :url "https://github.com/rescript-lang/tree-sitter-rescript"
+        :use_makefile true}}))))
