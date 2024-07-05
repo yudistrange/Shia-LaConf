@@ -5,16 +5,6 @@ return {
 		--
 		-- if you want to see what colorschemes are already installed, you can use `:telescope colorscheme`.
 		"folke/tokyonight.nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins.
-		init = function()
-			-- load the colorscheme here.
-			-- like many other themes, this one has different styles, and you could load
-			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-night")
-
-			-- you can configure highlights by doing something like:
-			vim.cmd.hi("comment gui=none")
-		end,
 	},
 	{ "rebelot/kanagawa.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
@@ -25,4 +15,23 @@ return {
 	{ "sainnhe/edge" },
 	{ "craftzdog/solarized-osaka.nvim" },
 	{ "shaunsingh/nord.nvim" },
+	{
+		"uloco/bluloco.nvim",
+		dependencies = { "rktjmp/lush.nvim" },
+	},
+	{ "mhartington/oceanic-next" },
+	{ "savq/melange-nvim" },
+	{ "tiagovla/tokyodark.nvim" },
+	{ "bluz71/vim-nightfly-colors", name = "nightfly" },
+	{ "AlexvZyl/nordic.nvim" },
+	{
+		"tanvirtin/monokai.nvim",
+		priority = 1000, -- make sure to load this before all the other start plugins.
+		init = function()
+			vim.cmd.colorscheme("monokai_pro")
+
+			-- you can configure highlights by doing something like:
+			vim.cmd.hi("comment gui=none")
+		end,
+	},
 }
