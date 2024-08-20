@@ -5,21 +5,19 @@ return { -- Useful plugin to show you pending keybinds.
 		require("which-key").setup()
 
 		-- Document existing key chains
-		require("which-key").register({
-			["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-			["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-			["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-			["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-			["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-			["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-			["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
-			["<leader>b"] = { name = "[B]uffer Options", _ = "which_key_ignore" },
-			["<leader>l"] = { name = "[L]SP Options", _ = "which_key_ignore" },
-			["<leader>?"] = { name = "Editor Config Options", _ = "which_key_ignore" },
+		require("which-key").add({
+			{ "<leader>c", group = "[C]ode" },
+			{ "<leader>d", group = "[D]ocument" },
+			{ "<leader>r", group = "[R]ename" },
+			{ "<leader>s", group = "[S]earch" },
+			{ "<leader>w", group = "[W]orkspace" },
+			{ "<leader>t", group = "[T]oggle" },
+			{ "<leader>h", group = "Git [H]hich_key_ignore" },
+			{ "<leader>b", group = "[B]uffer Options" },
+			{ "<leader>l", group = "[L]SP Options" },
+			{ "<leader>?", group = "Editor Config Options" },
+			{ "<leader>h", desc = "Git [H]unk", mode = "v" },
 		})
 		-- visual mode
-		require("which-key").register({
-			["<leader>h"] = { "Git [H]unk" },
-		}, { mode = "v" })
 	end,
 }
