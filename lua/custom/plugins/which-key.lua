@@ -12,11 +12,10 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>w", group = "[W]orkspace" },
 			{ "<leader>t", group = "[T]oggle" },
-			{ "<leader>h", group = "Git [H]hich_key_ignore" },
+			{ "<leader>h", group = "Git" },
 			{ "<leader>b", group = "[B]uffer Options" },
 			{ "<leader>l", group = "[L]SP Options" },
 			{ "<leader>?", group = "Editor Config Options" },
-			{ "<leader>h", desc = "Git [H]unk", mode = "v" },
 		})
 		-- visual mode
 	end,
