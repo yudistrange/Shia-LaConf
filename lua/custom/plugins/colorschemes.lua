@@ -24,6 +24,8 @@ return {
 	{ "tiagovla/tokyodark.nvim" },
 	{ "bluz71/vim-nightfly-colors", name = "nightfly" },
 	{ "AlexvZyl/nordic.nvim" },
+	{ "ray-x/starry.nvim", config = { style = {} } },
+	{ "ray-x/aurora" },
 	{
 		"tanvirtin/monokai.nvim",
 		priority = 1000, -- make sure to load this before all the other start plugins.
