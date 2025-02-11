@@ -5,6 +5,15 @@ return {
 		--
 		-- if you want to see what colorschemes are already installed, you can use `:telescope colorscheme`.
 		"folke/tokyonight.nvim",
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
+		lazy = false,
+		priority = 1000,
 	},
 	{ "rebelot/kanagawa.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
@@ -28,12 +37,12 @@ return {
 	{ "ray-x/aurora" },
 	{
 		"tanvirtin/monokai.nvim",
-		priority = 1000, -- make sure to load this before all the other start plugins.
-		init = function()
-			vim.cmd.colorscheme("monokai_pro")
-
-			-- you can configure highlights by doing something like:
-			vim.cmd.hi("comment gui=none")
-		end,
+		opt = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				float = "transparent",
+			},
+		},
 	},
 }
