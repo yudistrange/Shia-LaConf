@@ -6,7 +6,6 @@ return {
 		-- if you want to see what colorschemes are already installed, you can use `:telescope colorscheme`.
 		"folke/tokyonight.nvim",
 		opts = {
-			transparent = true,
 			styles = {
 				sidebars = "transparent",
 				floats = "transparent",
@@ -15,7 +14,12 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	{ "rebelot/kanagawa.nvim" },
+	{
+		"rebelot/kanagawa.nvim",
+		config = function()
+			vim.cmd("colorscheme kanagawa")
+		end,
+	},
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "olimorris/onedarkpro.nvim" },
