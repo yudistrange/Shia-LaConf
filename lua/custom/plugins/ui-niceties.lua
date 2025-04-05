@@ -10,4 +10,9 @@ return {
 		event = "BufReadPre",
 		opts = {},
 	},
+	{
+		"chentoast/marks.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 }
