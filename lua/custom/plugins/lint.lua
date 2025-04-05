@@ -4,7 +4,9 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lint = require("lint")
-			lint.linters_by_ft = {}
+			lint.linters_by_ft = {
+				clojure = { "clj-kondo" },
+			}
 
 			-- To allow other plugins to add linters to require('lint').linters_by_ft,
 			-- instead set linters_by_ft like this:
