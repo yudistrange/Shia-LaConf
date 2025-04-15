@@ -14,12 +14,7 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	{
-		"rebelot/kanagawa.nvim",
-		config = function()
-			vim.cmd("colorscheme kanagawa")
-		end,
-	},
+	{ "rebelot/kanagawa.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "olimorris/onedarkpro.nvim" },
@@ -39,6 +34,17 @@ return {
 	{ "AlexvZyl/nordic.nvim" },
 	{ "ray-x/starry.nvim", config = { style = {} } },
 	{ "ray-x/aurora" },
+	{
+		"srt0/everblush.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("everblush").setup({
+				transparent = false, -- Set to true for transparency
+			})
+			vim.cmd.colorscheme("everblush")
+		end,
+	},
 	{
 		"tanvirtin/monokai.nvim",
 		opt = {
