@@ -38,12 +38,12 @@ return {
 		"srt0/everblush.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			require("everblush").setup({
-				transparent = false, -- Set to true for transparency
-			})
-			vim.cmd.colorscheme("everblush")
-		end,
+		-- config = function()
+		-- 	require("everblush").setup({
+		-- 		transparent = false, -- Set to true for transparency
+		-- 	})
+		-- 	vim.cmd.colorscheme("everblush")
+		-- end,
 	},
 	{
 		"tanvirtin/monokai.nvim",
@@ -54,5 +54,19 @@ return {
 				float = "transparent",
 			},
 		},
+	},
+	{
+		"armannikoyan/rusty",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = false,
+			italic_comments = true,
+			underline_current_line = true,
+		},
+		config = function(_, opts)
+			require("rusty").setup(opts)
+			vim.cmd("colorscheme rusty")
+		end,
 	},
 }
