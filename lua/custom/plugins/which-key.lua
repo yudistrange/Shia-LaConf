@@ -11,7 +11,7 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "<leader>r", group = "[R]ename" },
 			{ "<leader>s", group = "[S]earch" },
 			{ "<leader>w", group = "[W]orkspace" },
-			{ "<leader>t", group = "[T]oggle" },
+			{ "<leader>t", group = "[T]elescope" },
 			{ "<leader>h", group = "Git" },
 			{ "<leader>b", group = "[B]uffer Options" },
 			{ "<leader>l", group = "[L]SP Options" },
