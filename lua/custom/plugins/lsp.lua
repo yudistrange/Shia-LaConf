@@ -203,6 +203,8 @@ return { -- LSP Configuration & Plugins
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		require("mason-lspconfig").setup({
+			ensure_installed = { "clojure_lsp" },
+			automatic_installation = {},
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}

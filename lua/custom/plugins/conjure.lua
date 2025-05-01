@@ -5,7 +5,7 @@ return {
 			"guns/vim-sexp",
 			"tpope/vim-sexp-mappings-for-regular-people",
 			"tpope/vim-repeat",
-			"kylechui/nvim-surround",
+			-- "kylechui/nvim-surround",
 			"HiPhish/rainbow-delimiters.nvim",
 		},
 	},
