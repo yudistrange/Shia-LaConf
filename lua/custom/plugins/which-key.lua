@@ -6,16 +6,14 @@ return { -- Useful plugin to show you pending keybinds.
 
 		-- Document existing key chains
 		require("which-key").add({
-			{ "<leader>c", group = "[C]ode" },
-			{ "<leader>d", group = "[D]ocument" },
-			{ "<leader>r", group = "[R]ename" },
+			{ "<leader>D", group = "[D]iagnostics" },
 			{ "<leader>s", group = "[S]earch" },
-			{ "<leader>w", group = "[W]orkspace" },
-			{ "<leader>t", group = "[T]elescope" },
-			{ "<leader>h", group = "Git" },
-			{ "<leader>b", group = "[B]uffer Options" },
+			{ "<leader>f", group = "[F]ind Files" },
+			{ "<leader>g", group = "[G]it" },
 			{ "<leader>l", group = "[L]SP Options" },
-			{ "<leader>?", group = "Editor Config Options" },
+			{ "<leader>u", group = "[U]ser Config" },
+			{ "<leader>z", group = "[Z]en Mode" },
+			{ "<leader>h", group = "[H]istory" },
 		})
 		-- visual mode
 	end,
