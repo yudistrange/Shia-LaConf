@@ -7,7 +7,6 @@ return { -- LSP Configuration & Plugins
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Useful status updates for LSP.
-		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 		{ "j-hui/fidget.nvim", opts = {} },
 
 		-- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -57,33 +56,23 @@ return { -- LSP Configuration & Plugins
 				-- In this case, we create a function that lets us more easily define mappings specific
 				-- for LSP related items. It sets the mode, buffer and description for us each time.
 				local map = function(keys, func, desc)
-					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+					vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
 				end
 
 				-- Jump to the definition of the word under your cursor.
 				--  This is where a variable was first declared, or where a function is defined, etc.
 				--  To jump back, press <C-t>.
-				map("gd", require("telescope.builtin").lsp_definitions, "[g]oto [d]efinition")
 
-				-- Find references for the word under your cursor.
-				map("gr", require("telescope.builtin").lsp_references, "[g]oto [r]eferences")
+				map("gd", Snacks.picker.lsp_definitions, "[g]oto [d]efinition")
+				map("gD", Snacks.picker.lsp_declarations, "[g]oto [D]eclarations")
 
-				-- Jump to the implementation of the word under your cursor.
-				--  Useful when your language has ways of declaring types without an actual implementation.
-				map("gI", require("telescope.builtin").lsp_implementations, "[g]oto [I]mplementation")
+				map("gr", Snacks.picker.lsp_references, "[g]oto [r]eferences")
+				map("gI", Snacks.picker.lsp_implementations, "[g]oto [I]mplementation")
+				map("<leader>lD", Snacks.picker.lsp_type_definitions, "Type [D]efinition")
 
-				-- Jump to the type of the word under your cursor.
-				--  Useful when you're not sure what type a variable is and you want to see
-				--  the definition of its *type*, not where it was *defined*.
-				map("<leader>lD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
-				-- Fuzzy find all the symbols in your current document.
-				--  Symbols are things like variables, functions, types, etc.
-				map("<leader>lS", require("telescope.builtin").lsp_document_symbols, "Document [S]ymbols")
-
-				-- Fuzzy find all the symbols in your current workspace.
-				--  Similar to document symbols, except searches over your entire project.
-				map("<leader>ls", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace [s]ymbols")
+				-- Diagnostics
+				map("<leader>Dd", Snacks.picker.diagnostics_buffer, "[d]ocument Diagnostics")
+				map("<leader>Dw", Snacks.picker.diagnostics, "[w]orkspace Diagnostics")
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
@@ -96,11 +85,6 @@ return { -- LSP Configuration & Plugins
 				-- Opens a popup that displays documentation about the word under your cursor
 				--  See `:help K` for why this keymap.
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
-				map("<leader>lq", require("telescope.builtin").diagnostics, "Workspace diagnostics")
-
-				-- WARN: This is not Goto Definition, this is Goto Declaration.
-				--  For example, in C this would take you to the header.
-				map("gD", vim.lsp.buf.declaration, "[g]oto [D]eclaration")
 
 				-- The following two autocommands are used to highlight references of the
 				-- word under your cursor when your cursor rests there for a little while.
@@ -129,16 +113,6 @@ return { -- LSP Configuration & Plugins
 							vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
 						end,
 					})
-				end
-
-				-- The following autocommand is used to enable inlay hints in your
-				-- code, if the language server you are using supports them
-				--
-				-- This may be unwanted, since they displace some of your code
-				if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-					map("<leader>th", function()
-						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-					end, "[T]oggle Inlay [H]ints")
 				end
 			end,
 		})
