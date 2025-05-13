@@ -8,9 +8,9 @@ return {
 		animate = { enabled = false },
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
-		explorer = { enabled = true },
-		indent = { enabled = true },
-		input = { enabled = true },
+		explorer = { enabled = false },
+		indent = { enabled = false },
+		input = { enabled = false },
 		notifier = {
 			enabled = true,
 			timeout = 3000,
