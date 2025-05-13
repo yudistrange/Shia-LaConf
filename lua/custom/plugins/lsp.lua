@@ -66,9 +66,9 @@ return { -- LSP Configuration & Plugins
 				map("gd", Snacks.picker.lsp_definitions, "[g]oto [d]efinition")
 				map("gD", Snacks.picker.lsp_declarations, "[g]oto [D]eclarations")
 
-				map("gr", Snacks.picker.lsp_references, "[g]oto [r]eferences")
 				map("gI", Snacks.picker.lsp_implementations, "[g]oto [I]mplementation")
 				map("<leader>lD", Snacks.picker.lsp_type_definitions, "Type [D]efinition")
+				map("<leader>lx", Snacks.picker.lsp_references, "[g]oto [R]eferences")
 
 				-- Diagnostics
 				map("<leader>Dd", Snacks.picker.diagnostics_buffer, "[d]ocument Diagnostics")
