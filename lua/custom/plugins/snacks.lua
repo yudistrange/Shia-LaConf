@@ -29,7 +29,7 @@ return {
 		},
 	},
 	keys = {
-		-- Top Pickers & Explorer
+		-- Top Pickers
 		{
 			"<leader><space>",
 			function()
@@ -57,13 +57,6 @@ return {
 				Snacks.picker.notifications()
 			end,
 			desc = "Notification History",
-		},
-		{
-			"\\",
-			function()
-				Snacks.explorer()
-			end,
-			desc = "File Explorer",
 		},
 		-- find
 		{
