@@ -1,3 +1,4 @@
 return {
-	"kylechui/nvim-surround",
+	"echasnovski/mini.surround",
+	version = '*',
 }
