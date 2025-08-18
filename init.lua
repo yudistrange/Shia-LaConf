@@ -243,6 +243,7 @@ require("lazy").setup({
 	},
 })
 
+require("custom.clipboard")
 require("custom.keybindings")
 require("custom.config")
 
