@@ -1,4 +1,3 @@
-vim.opt.expandtab = false
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.cmd("colorscheme catppuccin")
+vim.o.expandtab = false
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
