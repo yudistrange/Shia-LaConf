@@ -52,7 +52,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 			--   },
 			-- },
-			-- pickers = {}
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
+				},
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
@@ -66,6 +70,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
+		local themes = require("telescope.themes")
 
 		-- Search
 		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
@@ -92,14 +97,21 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "[G]it [C]ommits" })
 		vim.keymap.set("n", "<leader>gC", builtin.git_bcommits, { desc = "[G]it Buffer [C]ommits" })
 
+		vim.keymap.set(
+			"n",
+			"<leader>tc",
+			":Telescope colorscheme live_preview=true<CR>",
+			{ desc = "[C]olorscheme with Preview" }
+		)
+
 		-- Slightly advanced example of overriding default behavior and theme
 		vim.keymap.set("n", "<leader>/", function()
 			-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+			builtin.current_buffer_fuzzy_find(themes.get_dropdown({
 				winblend = 10,
 				previewer = false,
 			}))
-		end, { desc = "[/] Fuzzily search in current buffer" })
+		end, { desc = "Fuzzily search in current buffer" })
 
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -108,11 +120,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				grep_open_files = true,
 				prompt_title = "Live Grep in Open Files",
 			})
-		end, { desc = "[S]earch [/] in Open Files" })
+		end, { desc = "Search in Open Files" })
 
 		-- Shortcut for searching your Neovim configuration files
-		vim.keymap.set("n", "<leader>sn", function()
+		vim.keymap.set("n", "<leader>fn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[S]earch [N]eovim files" })
+		end, { desc = "[N]eovim [F]iles" })
 	end,
 }
