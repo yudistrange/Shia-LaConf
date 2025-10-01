@@ -52,9 +52,6 @@ return {
 		event = { "WinLeave" },
 	},
 	{
-		"m00qek/baleia.nvim",
-	},
-	{
 		"j-hui/fidget.nvim",
 	},
 }
