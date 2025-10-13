@@ -71,4 +71,10 @@ return {
 			underline_current_line = true,
 		},
 	},
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 }
