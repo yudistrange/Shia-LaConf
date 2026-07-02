@@ -17,9 +17,6 @@ return {
 	{
 		"Olical/conjure",
 		dependencies = {
-			"guns/vim-sexp",
-			"tpope/vim-sexp-mappings-for-regular-people",
-			"tpope/vim-repeat",
 			"kylechui/nvim-surround",
 			"HiPhish/rainbow-delimiters.nvim",
 			-- "gpanders/nvim-parinfer",
@@ -59,8 +56,21 @@ return {
 	},
 	{
 		"julienvincent/nvim-paredit",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 		config = function()
-			require("nvim-paredit").setup()
+			local paredit = require("nvim-paredit")
+			paredit.setup({
+				cursor_behaviour = "auto",
+				dragging = {
+					auto_drag_pairs = true,
+				},
+				indent = {
+					enabled = true,
+					indentor = require("nvim-paredit.indentation.native").indentor,
+				},
+			})
 		end,
 	},
 }
