@@ -231,18 +231,24 @@ return {
           },
         },
       },
+    }
 
-      clojure_lsp = {
-        -- Use .git as the sole root marker, but only match actual
-        -- directories (not submodule .git files) to ensure one LSP
-        -- server for the whole monorepo.
-        root_dir = function(fname)
+    -- Override clojure_lsp root detection before mason-lspconfig's
+    -- automatic_enable fires vim.lsp.enable(). Use only .git directories
+    -- (not submodule .git files) so the whole monorepo gets one LSP server.
+    -- vim.lsp.config uses a callback-based root_dir: fun(bufnr, on_dir)
+    vim.lsp.config.clojure_lsp = vim.tbl_deep_extend("force",
+      vim.lsp.config.clojure_lsp or {},
+      {
+        root_dir = function(bufnr, on_dir)
+          local fname = vim.api.nvim_buf_get_name(bufnr)
           local path = vim.fs.dirname(fname)
           while path do
             local git = vim.fs.joinpath(path, '.git')
             local stat = vim.uv.fs_stat(git)
             if stat and stat.type == 'directory' then
-              return path
+              on_dir(path)
+              return
             end
             local parent = vim.fs.dirname(path)
             if parent == path then
@@ -250,10 +256,10 @@ return {
             end
             path = parent
           end
-          return vim.fs.dirname(fname)
+          on_dir(vim.fs.dirname(fname))
         end,
-      },
-    }
+      }
+    )
 
     -- Ensure the servers and tools above are installed
     --
