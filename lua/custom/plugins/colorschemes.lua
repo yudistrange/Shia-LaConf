@@ -26,7 +26,7 @@ return {
 		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
-			vim.cmd("colorscheme rose-pine")
+			-- vim.cmd("colorscheme rose-pine")
 		end,
 	},
 	{ "olimorris/onedarkpro.nvim" },
@@ -94,4 +94,10 @@ return {
 		end,
 	},
 	{ "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+	{
+		"ellisonleao/gruvbox.nvim",
+		config = function()
+			vim.cmd("colorscheme gruvbox")
+		end,
+	},
 }
