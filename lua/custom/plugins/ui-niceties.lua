@@ -10,37 +10,6 @@ return {
     opts = {},
   },
   {
-    -- Calls `require('slimline').setup({})`
-    "sschleemilch/slimline.nvim",
-    opts = {
-      opts = {
-        style = "bg",
-        configs = {
-          path = {
-            hl = {
-              primary = "Define",
-            },
-          },
-          git = {
-            hl = {
-              primary = "Function",
-            },
-          },
-          diagnostics = {
-            hl = {
-              primary = "Statement",
-            },
-          },
-          filetype_lsp = {
-            hl = {
-              primary = "String",
-            },
-          },
-        },
-      },
-    },
-  },
-  {
     "nvim-zh/colorful-winsep.nvim",
     config = true,
     event = { "WinLeave" },
