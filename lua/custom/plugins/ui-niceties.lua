@@ -41,7 +41,7 @@ return {
 
         -- Function to ignore certain windows (e.g., don't tint floating or terminal windows)
         window_ignore_function = function(winid)
-          local buftype = vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(winid), "buftype")
+          local buftype = vim.bo[vim.api.nvim_win_get_buf(winid)].buftype
           local floating = vim.api.nvim_win_get_config(winid).relative ~= ""
           -- Don't tint terminal or floating windows
           return buftype == "terminal" or floating
