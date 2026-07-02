@@ -17,7 +17,6 @@ return {
   {
     "Olical/conjure",
     dependencies = {
-      "kylechui/nvim-surround",
       "HiPhish/rainbow-delimiters.nvim",
       -- "gpanders/nvim-parinfer",
     },
