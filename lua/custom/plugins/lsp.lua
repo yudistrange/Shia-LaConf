@@ -231,6 +231,28 @@ return {
           },
         },
       },
+
+      clojure_lsp = {
+        -- Use .git as the sole root marker, but only match actual
+        -- directories (not submodule .git files) to ensure one LSP
+        -- server for the whole monorepo.
+        root_dir = function(fname)
+          local path = vim.fs.dirname(fname)
+          while path do
+            local git = vim.fs.joinpath(path, '.git')
+            local stat = vim.uv.fs_stat(git)
+            if stat and stat.type == 'directory' then
+              return path
+            end
+            local parent = vim.fs.dirname(path)
+            if parent == path then
+              break
+            end
+            path = parent
+          end
+          return vim.fs.dirname(fname)
+        end,
+      },
     }
 
     -- Ensure the servers and tools above are installed
