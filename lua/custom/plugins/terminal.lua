@@ -10,14 +10,9 @@ return {
   "akinsho/toggleterm.nvim",
   version = "*",
   config = function()
-    require("toggleterm").setup({})
-    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
-
-    local terminal_autogroup = vim.api.nvim_create_augroup("terminalOpenGroup", { clear = true })
-    vim.api.nvim_create_autocmd({ "TermOpen" }, {
-      group = terminal_autogroup,
-      callback = function()
-        local opts = { buffer = 0 }
+    require("toggleterm").setup({
+      on_open = function(term)
+        local opts = { buffer = term.bufnr }
         vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
         vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
         vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
@@ -25,8 +20,8 @@ return {
         vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
         vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
         vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
-        print("Entered the terminal")
       end,
     })
+    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
   end,
 }
