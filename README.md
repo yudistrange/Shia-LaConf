@@ -1,4 +1,5 @@
 # Shia LaConf
+
 > Living in the woods Shia LaConf
 >
 > Copying for sport Shia LaConf
@@ -7,13 +8,26 @@
 >
 > Actual cannibal Shia LaConf
 
-Copied configs from across the internet. They have been munged and fashined as required.
-[_Cannibalized_](https://www.youtube.com/watch?v=o0u4M6vppCI) in a sense.
+A personal Neovim configuration based on
+[Kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim), written in Lua and
+[_cannibalized_](https://www.youtube.com/watch?v=o0u4M6vppCI) from useful
+configurations across the internet.
 
-This is a stab at writing neovim configuration using [fennel](https://fennel-lang.org/). This was initially inspired (cannibalizes) by the awesome [Magic-Kit](https://github.com/Olical/magic-kit) by [Olical](https://github.com/Olical/). However now it has been written from the ground up in fennel.
+## Requirements
+
+- Neovim 0.11 or newer
+- Git, Make, unzip, and ripgrep
+- A Nerd Font
+
+Language servers, formatters, and linters managed by Mason are installed when
+Neovim starts for the first time.
 
 ## Installation
-```
+
+```sh
 git clone git@github.com:yudistrange/Shia-LaConf.git ~/.config/nvim
-~/.config/nvim/script/sync.sh
+nvim
 ```
+
+Run `:checkhealth` after installation to identify any optional system providers
+or tools you may want to add.
