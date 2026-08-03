@@ -44,7 +44,7 @@ return {
   { "tiagovla/tokyodark.nvim" },
   { "bluz71/vim-nightfly-colors", name = "nightfly" },
   { "AlexvZyl/nordic.nvim" },
-  { "ray-x/starry.nvim", config = { style = {} } },
+  { "ray-x/starry.nvim", opts = { style = {} } },
   { "ray-x/aurora" },
   {
     "srt0/everblush.nvim",
@@ -59,7 +59,7 @@ return {
   },
   {
     "tanvirtin/monokai.nvim",
-    opt = {
+    opts = {
       transparent = true,
       styles = {
         sidebars = "transparent",
