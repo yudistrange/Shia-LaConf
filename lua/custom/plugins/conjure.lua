@@ -1,6 +1,29 @@
+local conjure_filetypes = {
+  "clojure",
+  "elixir",
+  "fennel",
+  "hy",
+  "janet",
+  "javascript",
+  "julia",
+  "lisp",
+  "lua",
+  "php",
+  "picolisp",
+  "python",
+  "r",
+  "racket",
+  "ruby",
+  "rust",
+  "scheme",
+  "sql",
+  "typescript",
+}
+
 return {
   {
     "m00qek/baleia.nvim",
+    lazy = true,
     opts = {
       line_starts_at = 3,
     },
@@ -16,8 +39,10 @@ return {
   },
   {
     "Olical/conjure",
+    ft = conjure_filetypes,
     dependencies = {
       "HiPhish/rainbow-delimiters.nvim",
+      "m00qek/baleia.nvim",
       -- "gpanders/nvim-parinfer",
     },
     config = function(_, _)
@@ -55,6 +80,7 @@ return {
   },
   {
     "julienvincent/nvim-paredit",
+    ft = { "clojure", "fennel", "scheme", "lisp", "janet" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
     },
