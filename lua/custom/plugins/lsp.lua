@@ -217,6 +217,28 @@ return {
       -- ts_ls = {},
       --
 
+      clojure_lsp = {
+        -- Use only real .git directories as roots so submodules in a
+        -- monorepo share the parent language server.
+        root_dir = function(bufnr, on_dir)
+          local fname = vim.api.nvim_buf_get_name(bufnr)
+          local path = vim.fs.dirname(fname)
+          while path do
+            local git = vim.fs.joinpath(path, ".git")
+            local stat = vim.uv.fs_stat(git)
+            if stat and stat.type == "directory" then
+              on_dir(path)
+              return
+            end
+            local parent = vim.fs.dirname(path)
+            if parent == path then
+              break
+            end
+            path = parent
+          end
+          on_dir(vim.fs.dirname(fname))
+        end,
+      },
       lua_ls = {
         -- cmd = { ... },
         -- filetypes = { ... },
@@ -233,34 +255,6 @@ return {
       },
     }
 
-    -- Override clojure_lsp root detection before mason-lspconfig's
-    -- automatic_enable fires vim.lsp.enable(). Use only .git directories
-    -- (not submodule .git files) so the whole monorepo gets one LSP server.
-    -- vim.lsp.config uses a callback-based root_dir: fun(bufnr, on_dir)
-    vim.lsp.config.clojure_lsp = vim.tbl_deep_extend("force",
-      vim.lsp.config.clojure_lsp or {},
-      {
-        root_dir = function(bufnr, on_dir)
-          local fname = vim.api.nvim_buf_get_name(bufnr)
-          local path = vim.fs.dirname(fname)
-          while path do
-            local git = vim.fs.joinpath(path, '.git')
-            local stat = vim.uv.fs_stat(git)
-            if stat and stat.type == 'directory' then
-              on_dir(path)
-              return
-            end
-            local parent = vim.fs.dirname(path)
-            if parent == path then
-              break
-            end
-            path = parent
-          end
-          on_dir(vim.fs.dirname(fname))
-        end,
-      }
-    )
-
     -- Ensure the servers and tools above are installed
     --
     -- To check the current status of installed tools and/or manually install
@@ -274,25 +268,22 @@ return {
     --
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      "stylua", -- Used to format Lua code
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        "clj-kondo", -- Used to lint Clojure code
+        "stylua", -- Used to format Lua code
+      },
     })
-    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+    local enabled_servers = vim.tbl_keys(servers)
+    for server_name, server in pairs(servers) do
+      server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+      vim.lsp.config(server_name, server)
+    end
 
     require("mason-lspconfig").setup({
-      ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-      automatic_installation = false,
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-          require("lspconfig")[server_name].setup(server)
-        end,
-      },
+      ensure_installed = enabled_servers,
+      automatic_enable = enabled_servers,
     })
   end,
 }
