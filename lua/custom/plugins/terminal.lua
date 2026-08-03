@@ -9,6 +9,9 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+  keys = {
+    { "<leader>tt", "<cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+  },
   config = function()
     require("toggleterm").setup({
       on_open = function(term)
@@ -22,6 +25,5 @@ return {
         vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
       end,
     })
-    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
   end,
 }
