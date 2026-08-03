@@ -2,7 +2,7 @@ return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
   build = ":TSUpdate",
-  lazy = false,
+  event = { "BufReadPre", "BufNewFile" },
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   -- nvim-treesitter main branch: setup() no longer takes ensure_installed /
   -- highlight / indent. Parsers are installed via install(), and highlighting
