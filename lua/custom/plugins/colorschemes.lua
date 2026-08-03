@@ -1,4 +1,4 @@
-return {
+local themes = {
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -48,7 +48,6 @@ return {
   { "ray-x/aurora" },
   {
     "srt0/everblush.nvim",
-    lazy = false,
     priority = 1000,
     -- config = function()
     --   require("everblush").setup({
@@ -69,7 +68,6 @@ return {
   },
   {
     "armannikoyan/rusty",
-    lazy = false,
     priority = 1000,
     opts = {
       transparent = false,
@@ -79,25 +77,31 @@ return {
   },
   {
     "scottmckendry/cyberdream.nvim",
-    lazy = false,
     priority = 1000,
   },
   { "miikanissi/modus-themes.nvim", priority = 1000 },
   {
     "projekt0n/github-nvim-theme",
     name = "github-theme",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       require("github-theme").setup({})
       -- vim.cmd("colorscheme github_light")
     end,
   },
-  { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 },
+  { "bluz71/vim-moonfly-colors", name = "moonfly", priority = 1000 },
   {
     "ellisonleao/gruvbox.nvim",
+    priority = 1000,
     config = function()
       vim.cmd("colorscheme gruvbox")
     end,
   },
 }
+
+for _, theme in ipairs(themes) do
+  theme.lazy = true
+end
+themes[#themes].lazy = false
+
+return themes
