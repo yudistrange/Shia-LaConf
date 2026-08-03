@@ -270,7 +270,6 @@ return {
     -- for you, so that they are available from within Neovim.
     require("mason-tool-installer").setup({
       ensure_installed = {
-        "clj-kondo", -- Used to lint Clojure code
         "stylua", -- Used to format Lua code
       },
     })
