@@ -84,7 +84,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- Diagnostics
     vim.keymap.set("n", "<leader>dw", builtin.diagnostics, { desc = "[D]iagnostics [W]orkspace" })
-    vim.keymap.set("n", "<leader>dd", builtin.diagnostics, { buffer = true, desc = "[D]iagnostics [D]ocument" })
+    vim.keymap.set("n", "<leader>dd", function()
+      builtin.diagnostics({ bufnr = 0 })
+    end, { desc = "[D]iagnostics [D]ocument" })
 
     -- Files
     vim.keymap.set("n", "<leader><space>", builtin.find_files, { desc = "Smart file finder" })
