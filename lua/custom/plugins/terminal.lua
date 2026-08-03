@@ -11,7 +11,7 @@ return {
   version = "*",
   config = function()
     require("toggleterm").setup({})
-    vim.keymap.set({ "n", "i", "v", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" })
+    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
 
     local terminal_autogroup = vim.api.nvim_create_augroup("terminalOpenGroup", { clear = true })
     vim.api.nvim_create_autocmd({ "TermOpen" }, {
