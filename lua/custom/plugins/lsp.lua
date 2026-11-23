@@ -284,5 +284,12 @@ return {
       ensure_installed = enabled_servers,
       automatic_enable = enabled_servers,
     })
+
+    -- Use the project's Nix-shell ZLS rather than installing it through Mason.
+    vim.lsp.config("zls", {
+      cmd = { "zls" },
+      capabilities = capabilities,
+    })
+    vim.lsp.enable("zls")
   end,
 }
